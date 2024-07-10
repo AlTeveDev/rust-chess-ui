@@ -25,7 +25,7 @@ impl Folder {
 fn create_folder(folder: Folder) -> Result<Element, JsValue> {
 	let div = document().create_element("div")?;
 	div.set_class_name("filemanager-file-button");
-	div.set_inner_html(&format!("<img class='filemanager-file-icon' src='./icons/{folder.icon}.svg'><div class='filemanager-file-name'>{folder.name}</div>"));
+	div.set_inner_html(&format!("<img class='filemanager-file-icon' src='./icons/{}.svg'><div class='filemanager-file-name'>{}</div>", folder.icon, folder.name));
 	//let img = document().create_element("img")?;
 	//img.set_class_name("filemanager-file-icon");
 	//img.set_attribute("src", &format!("./icons/{}.svg", folder.icon))?;
