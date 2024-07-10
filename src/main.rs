@@ -25,14 +25,15 @@ impl Folder {
 fn create_folder(folder: Folder) -> Result<Element, JsValue> {
 	let div = document().create_element("div")?;
 	div.set_class_name("filemanager-file-button");
-	let img = document().create_element("img")?;
-	img.set_class_name("filemanager-file-icon");
-	img.set_attribute("src", &format!("./icons/{}.svg", folder.icon))?;
-	div.append_child(&img)?;
-	let name = document().create_element("div")?;
-	name.set_class_name("filemanager-file-name");
-	name.set_inner_html(&folder.name);
-	div.append_child(&name)?;
+	siv.set_inner_html(&format!("<img class='filemanager-file-icon' src='./icons/{folder.icon}.svg'><div class='filemanager-file-name'>{folder.name}</div>"))
+	//let img = document().create_element("img")?;
+	//img.set_class_name("filemanager-file-icon");
+	//img.set_attribute("src", &format!("./icons/{}.svg", folder.icon))?;
+	//div.append_child(&img)?;
+	//let name = document().create_element("div")?;
+	//name.set_class_name("filemanager-file-name");
+	//name.set_inner_html(&folder.name);
+	//div.append_child(&name)?;
 	
 	Ok(div)
 }
