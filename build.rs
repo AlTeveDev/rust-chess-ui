@@ -33,7 +33,11 @@ fn recursive_copy(from: PathBuf, to: PathBuf) -> Result<(), std::io::Error> {
 }
 
 fn main() {
-	recursive_copy("html".into(), "pkg".into()).unwrap();
+	let to: PathBuf = "pkg".into();
+	if !to.exists() {
+				create_dir(to.clone())?;
+			}
+	recursive_copy("html".into(), to).unwrap();
 	println!("cargo::rerun-if-changed=html/");
 	println!("cargo::rerun-if-changed=build.rs");
 }
