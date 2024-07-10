@@ -1,0 +1,18 @@
+#filemanager-files-list {
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.filemanager-file-button {
+	padding: 10px;
+}
+
+.filemanager-file-icon {
+	width: 64px;
+	height: 64px;
+}
+
+.filemanager-file-name {
+	margin: 0;
+    text-align: center;
+}
